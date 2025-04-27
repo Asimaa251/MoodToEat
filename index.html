@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MOOD TO EAT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="rain"></div>
+  <div class="container">
+    <h1>MOOD TO EAT</h1>
+
+    <button id="startButton" class="start-button">Mulai</button>
+
+    <div id="moodSelection" class="mood-selection" style="display: none;">
+      <h2>Pilih Moodmu:</h2>
+      <div class="mood-buttons">
+        <button class="mood" onclick="selectMood('senang')">😊 Senang</button>
+        <button class="mood" onclick="selectMood('sedih')">😢 Sedih</button>
+        <button class="mood" onclick="selectMood('kesal')">😡 Kesal</button>
+        <button class="mood" onclick="selectMood('marah')">🤬 Marah</button>
+        <button class="mood" onclick="selectMood('galau')">😵‍💫 Galau</button>
+        <button class="mood" onclick="selectMood('biasa')">😐 B aja</button>
+      </div>
+    </div>
+
+    <div id="foodResult" class="food-result" style="display: none;">
+      <h2 id="foodName"></h2>
+      <img id="foodImage" src="" alt="Food" width="200px">
+    </div>
+
+    <div id="map" style="height: 400px; width: 100%; display: none;"></div>
+  </div>
+
+  <footer>
+    © 2025 MOOD TO EAT — Proyek Akhir Kelas X — <strong>Nurul Asimarahmah</strong>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvZEP0wD5y1DxwiUHHqDxeYRxd0i1b5Uc&libraries=places" async defer></script>
+</body>
+</html>
