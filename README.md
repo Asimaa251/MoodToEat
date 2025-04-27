@@ -4,8 +4,9 @@
 Mood to Eat adalah aplikasi web yang memberikan rekomendasi makanan berdasarkan suasana hati dan budget user . Cocok buat kamu yang galau mau makan apa, cukup pilih mood, dan web ini akan bantu saranin makanan yang sesuai dan warung terdekat!.
 
 ## 📸 Screenshot
-![Halaman Utama](images/homepage.png)
-
+[![Halaman Utama](https://imgur.com/a/WohYYgK)
+[![Isi](https://imgur.com/a/kFWv7A7)
+[![Isi](https://imgur.com/a/AjhJrm9)
 
 ## ✨ Fitur
 - 😊 Pilih mood dari daftar: Senang, Sedih, Bosan, Stres
