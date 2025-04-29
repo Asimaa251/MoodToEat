@@ -1,71 +1,87 @@
 /* Style Umum */
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #ffe0c3, #ffc2b3);
-  }
-  
-  /* Container utama */
-  .container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  /* Judul */
-  h1 {
-    font-family: 'Comic Sans MS', cursive;
-    margin-bottom: 20px;
-  }
-  
-  /* Tombol Mulai */
-  .start-button {
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 10px 30px;
-    font-size: 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .start-button:hover {
-    background-color: #ff4b4b;
-  }
-  
-  /* Mood Selection */
-  .mood-buttons {
-    margin-top: 20px;
-  }
-  
-  .mood {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    background-color: #ffd6d6;
-    transition: background-color 0.3s;
-  }
-  
-  .mood:hover {
-    background-color: #ffb3b3;
-  }
-  
-  /* Hasil Makanan */
-  .food-result {
-    margin-top: 30px;
-  }
-  
-  /* Footer */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #ffe0c3, #ffc2b3);
+}
+
+/* Container utama */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Judul */
+h1 {
+  font-family: 'Comic Sans MS', cursive;
+  margin-bottom: 20px;
+}
+
+/* Tombol Mulai */
+.start-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-button:hover {
+  background-color: #ff4b4b;
+}
+
+/* Mood Selection */
+.mood-buttons {
+  margin-top: 20px;
+}
+
+.mood {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffd6d6;
+  transition: background-color 0.3s;
+}
+
+.mood:hover {
+  background-color: #ffb3b3;
+}
+
+/* Hasil Makanan */
+.food-result {
+  margin-top: 30px;
+}
+
+/* Tombol Fakta */
+.fact-button {
+  background-color: #ffa502;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  font-size: 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.fact-button:hover {
+  background-color: #e08900;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 15px;
@@ -103,3 +119,31 @@ footer {
   }
 }
 
+/* Efek animasi bounce */
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-15px); }
+  50%  { transform: translateY(0); }
+  70%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.bounce {
+  animation: bounce 0.6s ease;
+}
+
+#foodFact {
+  display: none; /* sembunyikan awalnya */
+  background-image: url('https://www.transparenttextures.com/patterns/food.png');
+  background-color: #fff8dc;
+  border: 2px dashed #ffa07a;
+  border-radius: 15px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  display: inline-block;
+  font-style: italic;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(255, 192, 203, 0.4);
+  max-width: 90%;
+  background-repeat: repeat;
+}

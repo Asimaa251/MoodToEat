@@ -25,9 +25,13 @@
       </div>
     </div>
 
-    <div id="foodResult" class="food-result" style="display: none;">
+    <!-- Hasil makanan + tombol fakta -->
+    <div class="food-result" id="foodResult" style="display: none;">
       <h2 id="foodName"></h2>
-      <img id="foodImage" src="" alt="Food" width="200px">
+      <img id="foodImage" src="" alt="Food Image" width="250">
+      <br><br>
+      <button id="factButton" class="fact-button" style="display: none;">Fakta Unik</button>
+      <p id="foodFact" style="margin-top: 10px; font-style: italic;"></p>
     </div>
 
     <div id="map" style="height: 400px; width: 100%; display: none;"></div>
@@ -38,6 +42,5 @@
   </footer>
 
   <script src="js/script.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvZEP0wD5y1DxwiUHHqDxeYRxd0i1b5Uc&libraries=places" async defer></script>
 </body>
 </html>

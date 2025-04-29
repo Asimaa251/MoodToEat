@@ -4,7 +4,8 @@ const moodSelection = document.getElementById('moodSelection');
 const foodResult = document.getElementById('foodResult');
 const foodName = document.getElementById('foodName');
 const foodImage = document.getElementById('foodImage');
-const mapDiv = document.getElementById('map');
+const factButton = document.getElementById('factButton');
+const foodFact = document.getElementById('foodFact');
 
 // Data makanan berdasarkan mood
 const moodFood = {
@@ -14,6 +15,16 @@ const moodFood = {
   marah: { name: 'Ayam Geprek', image: 'https://i.pinimg.com/474x/45/68/c7/4568c7b89a46caff2e5bff7f62f613e0.jpg' },
   galau: { name: 'Coklat', image: 'https://i.pinimg.com/474x/7b/ca/e1/7bcae10844aebb288b62875298bbc693.jpg' },
   biasa: { name: 'Nasi Goreng', image: 'https://i.pinimg.com/474x/94/82/ab/9482ab2e248d249e7daa7fd6924c8d3b.jpg' }
+};
+
+// Fakta unik per mood
+const foodFacts = {
+  senang: "Tahukah kamu? Makan es krim bisa meningkatkan hormon bahagia yaitu serotonin!",
+  sedih: "Sup hangat dapat memberikan rasa nyaman dan efek menenangkan saat kamu sedih.",
+  kesal: "Makan burger bisa memicu rasa puas karena kombinasi daging dan karbohidrat.",
+  marah: "Makanan pedas seperti ayam geprek bisa membantu melampiaskan emosi marah secara positif.",
+  galau: "Coklat mengandung phenylethylamine yang bisa bikin kamu merasa jatuh cinta lagi!",
+  biasa: "Nasi goreng adalah salah satu makanan favorit di dunia karena fleksibel dan cepat dibuat."
 };
 
 // Tombol "Mulai" ditekan
@@ -28,62 +39,26 @@ function selectMood(mood) {
   foodName.textContent = food.name;
   foodImage.src = food.image;
   foodResult.style.display = 'block';
-  mapDiv.style.display = 'block';
+  factButton.style.display = 'inline-block';
+  foodFact.textContent = "";
 
-  // Panggil Maps
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showMap, handleLocationError);
-  } else {
-    alert('Geolocation tidak didukung oleh browser ini.');
-  }
-}
+  // Tambah efek bounce pada gambar
+  foodImage.classList.remove("bounce");
+  void foodImage.offsetWidth;
+  foodImage.classList.add("bounce");
 
-// Fungsi untuk menampilkan peta
-function showMap(position) {
-  const userLocation = {
-    lat: position.coords.latitude,
-    lng: position.coords.longitude
+  // Ketika tombol fakta unik diklik
+  factButton.onclick = () => {
+    foodFact.textContent = foodFacts[mood];
+    foodFact.style.display = 'inline-block'; // tampilkan setelah ditekan
+    foodFact.classList.remove("bounce");     // reset animasi
+    void foodFact.offsetWidth;               // trigger reflow
+    foodFact.classList.add("bounce");        // animasi bounce
   };
-
-  const map = new google.maps.Map(document.getElementById('map'), {
-    center: userLocation,
-    zoom: 15
-  });
-
-  // Marker lokasi user
-  new google.maps.Marker({
-    position: userLocation,
-    map: map,
-    title: "Lokasimu"
-  });
-
-  // Cari restoran terdekat
-  const service = new google.maps.places.PlacesService(map);
-  service.nearbySearch({
-    location: userLocation,
-    radius: 1500,
-    type: ['restaurant']
-  }, (results, status) => {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      results.forEach(place => {
-        new google.maps.Marker({
-          position: place.geometry.location,
-          map: map,
-          title: place.name
-        });
-      });
-    }
-  });
 }
 
-// Kalau gagal ambil lokasi
-function handleLocationError(error) {
-  alert('Gagal mendapatkan lokasi: ' + error.message);}
 
-
-
-
-  // Hujan Emote Makanan
+// Hujan Emote Makanan
 const rainContainer = document.querySelector('.rain');
 const emojis = ["🍔", "🍕", "🍟", "🍣", "🍩", "🍜", "🍦", "🍗", "🥪", "🍉"];
 
@@ -100,4 +75,3 @@ function createEmoji() {
 }
 
 setInterval(createEmoji, 300); // Setiap 300ms munculin 1 emoji
-
