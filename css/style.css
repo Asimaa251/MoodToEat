@@ -20,8 +20,8 @@ body {
 
 /* Judul */
 h1 {
-  font-family: 'Comic Sans MS', cursive;
-  margin-bottom: 20px;
+  font-family: '', cursive;
+  margin-bottom: 20px;Comic Sans MS
 }
 
 /* Tombol Mulai */
@@ -141,9 +141,25 @@ footer {
   padding: 10px 20px;
   margin-top: 10px;
   display: inline-block;
-  font-style: italic;
+  font-style: 'Comic Sans MS';
   font-size: 1rem;
   box-shadow: 0 0 10px rgba(255, 192, 203, 0.4);
   max-width: 90%;
   background-repeat: repeat;
+}
+#anotherButton {
+  background-color: #ffa07a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 15px; /* tambahkan jarak dari atas */
+  }
+
+
+#anotherButton:hover {
+  background-color: #ff7f50;
 }

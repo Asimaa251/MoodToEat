@@ -44,11 +44,6 @@ npm run dev
 - Live Server (untuk local development)
 - Tools: VSC, Git, GitHub
 
-## ⚠️ Catatan Penting
-- Google Maps API Key harus valid.
-- Untuk penggunaan penuh (tanpa error seperti "For development purposes only"), daftarkan API key kamu di Google Cloud Console dan aktifkan billing.
-- Pastikan mengizinkan akses lokasi di browser.
-
 ## 📂 Struktur Folder
 MoodToEat/
 │
